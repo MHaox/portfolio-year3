@@ -1,5 +1,5 @@
 import { useState, useEffect} from "react";
-import { Navbar, Container } from "react-bootstrap";
+import { Navbar, Nav, Container } from "react-bootstrap";
 import git from "../assets/img/github-mark-white.svg"
 import linked from "../assets/img/linkedin-mark-white.svg"
 import insta from "../assets/img/insagram-mark-white.svg"
@@ -42,9 +42,9 @@ export const NavBar = () => {
                     </Nav>
                     <span className="navbar-text">
                         <div className="social-icon">
-                            <a href="#"><img src={linked} alt="LinkedIn" /></a>
-                            <a href="#"><img src={git} alt="GitHub" /></a>
-                            <a href="#"><img src={insta} alt="Insagram" /></a>
+                            <a href="https://www.linkedin.com/in/max-robert-hoogeweg/"><img src={linked} alt="LinkedIn" /></a>
+                            <a href="https://github.com/MaxHoogeweg"><img src={git} alt="GitHub" /></a>
+                            <a href="https://www.instagram.com/mhaox.global"><img src={insta} alt="Insagram" /></a>
                         </div>
                         <div className="vvd" onClick={() => console.log('Connect')}><span>Let's Connect</span></div>
                     </span>
