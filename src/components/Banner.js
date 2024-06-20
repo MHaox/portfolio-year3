@@ -46,7 +46,7 @@ export const Banner = () => {
     }
 
     return (
-        <section>
+        <section className="banner" id="home">
             <Container>
                 <Row className="align-items-center">
                     <Col xs={12} md={6} xl={7}>
@@ -57,10 +57,10 @@ export const Banner = () => {
                             <br />
                             <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Web Developer", "Student", "Full-Stack Developer", "licenced drone pilot", "Digital Creator" ]'><span className="wrap">{text}</span></span></h1>
                         <p>Flibberty floo, wibble wibble wabble. Snarfle garfle barfle yibble yabble. Wizzle wazzle frobble fribble, gloop glorp glibber globber. Zibber zib zabber dabber, foofle fiffle foffle. Mizzle mizzle mozzy mozzle, quibble quabble squibber squobble.ingle bangle bungle, zizzle zazzle zuggle. Trizzle traz trizzle troz, gribble grabble grozzy groz. Fibble fobble fubble fum, nizzle nozzy num num num. Snizzle snazzle snoozle snarp, dizzle dozzle dapple dark.</p>
-                        <button onClick={() => console.log('connect Banners')}>Let’s Connect<ArrowRightCircle /></button>
+                        <button onClick={() => console.log('connect Banners')}>Let’s Connect<ArrowRightCircle size={25} /></button>
                     </Col>
                     <Col xs={12} md={6} xl={5}>
-                        <img src={headerImg} alt="Banner" />
+                        <img src={headerImg} alt="Header Img" />
                     </Col>
                 </Row>
             </Container>
