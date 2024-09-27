@@ -63,7 +63,7 @@ h6 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 2vmin); /* Dynamically adjust font size based on viewport */
   color: white;
 }
 
@@ -81,10 +81,59 @@ h6 {
   }
 }
 
+/* Responsive Design */
+
+/* Large Devices (desktops, large tablets) */
+@media (min-width: 992px) {
+  .App-header {
+    font-size: calc(12px + 2vmin); /* Adjust font size for larger screens */
+  }
+
+  .App-logo {
+    height: 30vmin; /* Reduce logo size for larger screens */
+  }
+}
+
+/* Medium Devices (tablets) */
+@media (max-width: 768px) {
+  body {
+    font-size: 90%; /* Slightly reduce base font size on medium screens */
+  }
+
+  .App-header {
+    font-size: calc(8px + 2vmin); /* Reduce font size for tablets */
+  }
+
+  .App-logo {
+    height: 35vmin; /* Adjust logo size for tablets */
+  }
+}
+
+/* Small Devices (phones) */
+@media (max-width: 576px) {
+  body {
+    font-size: 80%; /* Further reduce base font size on small screens */
+  }
+
+  .App-header {
+    font-size: calc(6px + 2vmin); /* Smaller font size for phones */
+    padding: 20px; /* Add padding for better spacing */
+  }
+
+  .App-logo {
+    height: 50vmin; /* Increase logo size to take up more screen space on phones */
+  }
+
+  .App-link {
+    font-size: 14px; /* Adjust link size for mobile screens */
+  }
+}
+
+
 /* Custom CSS */
-/************ Navbar Css ************/
+/************ Navbar ************/
 nav.navbar {
-  padding: 18px 0;
+  padding: 12px 0;
   position: fixed;
   width: 100%;
   top: 0;
@@ -98,21 +147,52 @@ nav.navbar.scrolled {
 }
 
 nav.navbar a.navbar-brand {
-  width: 9%;
+  width: auto; /* Ensuring brand/logo fits well on all screen sizes */
+}
+
+nav.navbar a.navbar-brand img {
+  max-width: 150px; /* Adjust based on logo size for large screens */
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  nav.navbar a.navbar-brand img {
+    max-width: 120px; /* Adjust for smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  nav.navbar a.navbar-brand img {
+    max-width: 100px; /* Further adjust for mobile screens */
+  }
 }
 
 nav.navbar .navbar-nav .nav-link.navbar-link {
   font-weight: 400;
   color: #fff !important;
   letter-spacing: 0.8px;
-  padding: 0 25px;
-  font-size: 18px;
+  padding: 0 20px;
+  font-size: 16px; /* Slightly smaller font for better fit */
   opacity: 0.75;
 }
 
-nav.navbar .navbar-nav a.nav-link.navbar-link:hover,
-nav.navbar .navbar-nav a.nav-link.navbar-link.active {
+nav.navbar .navbar-nav .nav-link.navbar-link:hover,
+nav.navbar .navbar-nav .nav-link.navbar-link.active {
   opacity: 1;
+}
+
+@media (max-width: 768px) {
+  nav.navbar .navbar-nav .nav-link.navbar-link {
+    padding: 0 15px; /* Reduce padding on smaller screens */
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  nav.navbar .navbar-nav .nav-link.navbar-link {
+    font-size: 14px; /* Smaller text for mobile */
+    padding: 0 10px;
+  }
 }
 
 span.navbar-text {
@@ -122,12 +202,12 @@ span.navbar-text {
 
 .social-icon {
   display: inline-block;
-  margin-left: 14px;
+  margin-left: 10px;
 }
 
 .social-icon a {
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   background: rgba(217, 217, 217, 0.1);
   display: inline-flex;
   border-radius: 50%;
@@ -163,52 +243,50 @@ span.navbar-text {
   filter: brightness(0) saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%);
 }
 
+@media (max-width: 768px) {
+  .social-icon a {
+    width: 36px;
+    height: 36px; /* Reduce icon size for smaller screens */
+  }
+}
+
 .navbar-text button {
   font-weight: 700;
   color: #fff;
   border: 1px solid #fff;
-  padding: 18px 34px;
-  font-size: 18px;
-  margin-left: 18px;
+  padding: 14px 30px;
+  font-size: 16px;
+  margin-left: 12px;
   position: relative;
   background-color: transparent;
   transition: 0.3s ease-in-out;
 }
 
-.navbar-text button span {
-  z-index: 1;
+@media (max-width: 768px) {
+  .navbar-text button {
+    padding: 12px 20px; /* Adjust button padding */
+    font-size: 14px;
+  }
 }
 
-.navbar-text button::before {
-  content: "";
-  width: 0%;
-  height: 100%;
-  position: absolute;
-  background-color: #fff;
-  left: 0;
-  top: 0;
-  z-index: -1;
-  transition: 0.3s ease-in-out;
+@media (max-width: 576px) {
+  .navbar-text button {
+    padding: 10px 18px; /* Even smaller padding on mobile */
+    font-size: 13px;
+  }
 }
 
 .navbar-text button:hover {
-  color: #121212;
+  color: #fed244;
 }
 
-.navbar-text button:hover::before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-}
-
-nav.navbar .navbar-toggler:active,
-nav.navbar .navbar-toggler:focus {
+.navbar-toggler:active,
+.navbar-toggler:focus {
   outline: none;
   box-shadow: none;
 }
 
-nav.navbar .navbar-toggler-icon {
+.navbar-toggler-icon {
   width: 24px;
   height: 17px;
   background-image: none;
@@ -218,43 +296,34 @@ nav.navbar .navbar-toggler-icon {
   top: -2px;
 }
 
-nav.navbar .navbar-toggler-icon:focus {
-  border-bottom: 2px solid #fff;
-}
-
-nav.navbar .navbar-toggler-icon:after,
-nav.navbar .navbar-toggler-icon:before {
+.navbar-toggler-icon:after,
+.navbar-toggler-icon:before {
   width: 24px;
   position: absolute;
   height: 2px;
   background-color: #fff;
   top: 0;
   left: 0;
-  content: '';
+  content: "";
   z-index: 2;
   transition: all 300ms linear;
 }
 
-nav.navbar .navbar-toggler-icon:after {
+.navbar-toggler-icon:after {
   top: 8px;
 }
 
-nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
   transform: rotate(45deg);
-  background-color: #fff;
-  height: 2px;
 }
 
-nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
   transform: translateY(8px) rotate(-45deg);
-  background-color: #fff;
-  height: 2px;
 }
 
-nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-color: transparent;
 }
-
 /************ Banner Css ************/
 .banner {
   margin-top: 0;
@@ -293,25 +362,47 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 96%;
 }
 
-.banner button {
-  color: #fff;
+.banner-text button {
   font-weight: 700;
-  font-size: 20px;
-  margin-top: 60px;
-  letter-spacing: 0.8px;
-  display: flex;
-  align-items: center;
+  color: #cf1515;
+  border: 1px solid #fff;
+  padding: 14px 30px;
+  font-size: 16px;
+  margin-left: 12px;
+  position: relative;
+  background-color: transparent;
+  transition: 0.3s ease-in-out;
 }
 
-.banner button svg {
+/* .banner button svg {
   font-size: 25px;
   margin-left: 10px;
   transition: 0.3s ease-in-out;
   line-height: 1;
-}
+} */
 
 .banner button:hover svg {
   margin-left: 25px;
+  color: #fed244
+}
+
+span.navbar-text {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .banner-text button {
+    padding: 12px 20px; /* Adjust button padding */
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .banner-text button {
+    padding: 10px 18px; /* Even smaller padding on mobile */
+    font-size: 13px;
+  }
 }
 
 .banner img {
@@ -535,4 +626,74 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   width: 35%;
   right: 0;
   z-index: -4;
+}
+
+/************ Contact Css ************/
+
+.contact-section {
+  padding: 80px 0;
+  background-color: #121212;
+  color: #fff;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.contact-section p {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #b8b8b8;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-item {
+  margin-bottom: 20px;
+}
+
+.contact-item h4 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #fed244;
+}
+
+.contact-item a {
+  font-size: 18px;
+  color: #61dafb;
+  text-decoration: none;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 576px) {
+  .contact-section {
+    padding: 50px 20px;
+  }
+
+  .contact-item {
+    margin-bottom: 30px;
+  }
+}
+
+/************ Footer Css ************/
+
+.footer {
+  padding: 0 0 50px 0;
+}
+.footer p {
+  font-weight: 400;
+  font-size: 14px;
+  color: #B8B8B8;
+  letter-spacing: 0.5px;
+  margin-top: 20px;
 }
