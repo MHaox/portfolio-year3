@@ -3,7 +3,7 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import git from "../assets/img/github-mark-white.svg";
 import linked from "../assets/img/linkedin-mark-white.svg";
 import insta from "../assets/img/instagram-mark-white.svg";
-import logo from "../assets/img/logo.svg";
+import logo from "../assets/img/Logo.svg";
 
 export const NavBar = () => {
   const [activeLink, setActiveLink] = useState("home");

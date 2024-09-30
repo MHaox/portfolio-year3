@@ -631,10 +631,10 @@ span.navbar-text {
 /************ Contact Css ************/
 
 .contact-section {
-  padding: 80px 0;
+  /* padding: 80px 0; */
   background-color: #121212;
   color: #fff;
-  text-align: center;
+  text-align: end;
 }
 
 .contact-section h2 {
@@ -651,7 +651,7 @@ span.navbar-text {
 .contact-info {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: end;
 }
 
 .contact-item {
@@ -696,4 +696,66 @@ span.navbar-text {
   color: #B8B8B8;
   letter-spacing: 0.5px;
   margin-top: 20px;
+}
+
+/************ Detailpage Css ************/
+
+.page {
+  margin-top: 0;
+  padding: 150px 0 100px 0;
+} 
+
+.detail-page {
+  padding: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.detail-page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.detail-page p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Image and Video */
+.media-content img, 
+.media-content video {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Ensure video container is responsive */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive iframe */
+.iframe-container iframe {
+    width: 100%;
+    height: 600px;
+    border: none;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .detail-page h1 {
+        font-size: 2rem;
+    }
 }

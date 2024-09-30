@@ -19,19 +19,19 @@ export const Projects = () => {
             title: "SalesForce LwC app",
             description: "An app to scan students and connect them to an activity",
             imgUrl: SalesForce,
-            detailPage: "#test",
+            detailPage: "/salesforce",
         },
         {
-            title: "360° labor market; excellent professionals for the (EU)Region",
+            title: "360° labor market",
             description: "A study to bring Dutch and German schools together for improved job opportunities in both countries",
             imgUrl: labormarket,
-            detailPage: "#test",
+            detailPage: "/labormarket",
         },
         {
             title: "Stichting Hulpketen",
             description: "I was part of a team that made a website for a local foundation that provides food for the people that need it most",
             imgUrl: hulpketen,
-            detailPage: "#test",
+            detailPage: "/hulpketen",
         }
     ]
     const acomplisments = [
@@ -39,26 +39,22 @@ export const Projects = () => {
             title: "C1 English",
             description: "I obtained my Cambridge C1 certificate.",
             imgUrl: c1,
-            detailPage: "#test",
+            detailPage: "/c1",  // Add the path for the detail page
         },
         {
-            title: "drone flying licence",
+            title: "Drone Flying License",
             description: "I obtained my licence to fly a drone.",
             imgUrl: drone,
-            detailPage: "#test",
+            detailPage: "/drone",  // Add the path for the detail page
         },
         {
-            title: "International internship",
+            title: "International Internship",
             description: "I completed an international internship in Malta at the European School of English (ESE).",
             imgUrl: intIntern,
-            detailPage: "#test",
+            detailPage: "/internship",  // Add the path for the detail page
         }
-    ]
-       // {
-        //     title: "Inter Finder",
-        //     description: "intern finder was a school project that was made to provide companies as wel as schools a easy to use app to find interns and internships",
-        //     imgUrl: imgUrl,
-        // },
+    ];
+    
 
     return (
         <section className="project" id="projects">
